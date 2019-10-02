@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Voting DApp</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body class="container" style="background-color:rgb(255,255,255)">
+    <div class = "row" >
+        <nav class="navbar navbar-default">
+          <div class="container-fluid ">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">
+                <img alt="Logo" src="app/stylesheets/EENG.jpg" >
+              </a>
+            </div>
+          </div>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <!-- Load Ballot -->
+            <br>
+            <h2>Load Ballot:</h2>
+            <div id="msg4"></div>
+            <input type="text" id="ballotid" placeholder="Enter the ballot ID" style="width: 250px" />
+            <br>
+            <a href="#" onclick="loadBallot()" class="button" >Load</a>
+            <br>
+            <br>
+            <!-- Vote on Balot -->
+            <h2>Vote:</h2>
+            <br>
+            <b>Load the respective ballot before casting the vote</b>
+            <br>
+            <div id="msg"></div>
+            <input type="text" id="e-mail" placeholder="Enter your registered e-mail" style="width: 400px" />
+            <br>
+            <input type="text" id="candidate" placeholder="Enter the chosen candidate name" style="width: 400px" />
+            <br>
+            <a href="#" onclick="voteForCandidate()" class="button">Vote</a>
+            <br>
+        </div>
+        <div class="col-sm-6">
+            <!-- Election Results -->
+            <br>
+            <h2 id="btitle" > </h2>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="background-color:rgb(255,255,255)">Candidates</th>
+                            <th style="background-color:rgb(255,255,255)">Votes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="candidate-rows" style="background-color:rgb(255,255,255)">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div> 
+    <div></div> <hr />
+    <div class ="row">
+        <div class="col-sm-6" >  
+            <!-- Register to Vote -->
+            <br>
+            <h2>Register:</h2>
+            <div id="msg2"></div>
+            <input type="text" id="email" placeholder="Enter your institutional e-mail address" style="width: 400px" />
+            <br>
+            <input type="text" id="idnum" placeholder="Enter your institutional ID number" style="width: 400px" />
+            <br>
+            <input type="radio" style="width: 25px" name="permreq" value="1"> <b>Request Ballot Creation Permission</b>
+            <br>
+            <a href="#" onclick="registerToVote()" class="button">Register</a>
+        </div>
+        <div class="col-sm-6">
+             <!-- Create Ballot -->
+            <br>
+            <h2>Create Ballot:</h2>
+            <div id="msg3"></div>
+            <input type="text" id="cemail" placeholder="Enter your registered e-mail" style="width: 400px" />
+            <br>
+            <input type="text" id="vtitle" placeholder="Enter the title of your ballot" style="width: 400px" />
+            <br>
+            <b>Please, seperate each candidate with a comma.</b>
+            <br>
+            <input type="text" id="choices" placeholder="Enter the Candidates names" style="width: 400px" />
+            <br>
+            <b>Select ballot type:</b>
+            <br>
+            <input type="radio" style="width: 25px" name="ballottype" value="0"> <b>Poll</b> (results are displayed live)
+            <br>
+            <input type="radio" style="width: 25px" name="ballottype" value="1"> <b>Election</b> (results are displayed after the deadline)
+            <br>
+            <br>
+            <form>
+                <b>Select the deadline Date and Time:</b>
+                <br>
+                <input type="date" id="date" style="width: 170px">
+                <input type="time" id="time" style="width: 125px">
+            </form>
+            <a href="#" onclick="ballotSetup()" class="button">Create</a>
+            <br>
+            <br>
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+<script src="https://cdn.rawgit.com/jiggzson/b5f489af9ad931e3d186/raw/3a316e5b2fa85b8064dd3870936a6162b4862f1f/scientificToDecimal.js"></script>
+<script src="https://cdn.rawgit.com/abritinthebay/datejs/master/build/production/date.min.js"></script>
+<script src="app.js"></script>
+
+</html>
