@@ -33,6 +33,6 @@ npm run dev
 ```
 
 ### **Interacting with the voting DApp**:
-1. navigate to *localhost:8080* in your choice of browser
+1. navigate to *localhost:8080* in your browser of choice
 
 
